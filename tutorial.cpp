@@ -11,7 +11,7 @@
 #include <stdlib.h>
 
 // Our included library classes
-#include "vector2D.h"
+#include "CGL/vector2D.h"
 
 // To avoid having to type out the library name, 
 // CGL::Vector2D instead of Vector2D
