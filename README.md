@@ -45,7 +45,7 @@ Fill in the ```mult``` function at the top of ```triangle_test.cpp``` by impleme
 
 Remember to run ```make``` to compile your edits.
 
-If you are feeling ambitious, try instantiating the matrix to perform a scaling operation or shifting operation. We'll learn more formally about these later on in the course.
+If you are feeling ambitious, try instantiating the matrix to perform a scaling operation (possible) or shifting operation (not possible, why is that?). We'll learn more formally about these later on in the course.
 
 ## Part 3 - Going Above and Beyond (Optional)
 
