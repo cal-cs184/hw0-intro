@@ -135,7 +135,7 @@ cmake_minimum_required(VERSION 2.8)
 
 # Application source
 set(APPLICATION_SOURCE
-    tutorial.cpp
+    triangle_test.cpp
 )
 
 #-------------------------------------------------------------------------------
@@ -169,9 +169,9 @@ endif(WIN32)
 #-------------------------------------------------------------------------------
 # Add executable
 #-------------------------------------------------------------------------------
-add_executable(tutorial ${APPLICATION_SOURCE})
+add_executable(triangle_test ${APPLICATION_SOURCE})
 
-target_link_libraries( tutorial
+target_link_libraries( triangle_test
     CGL ${CGL_LIBRARIES}
     glew ${GLEW_LIBRARIES}
     glfw ${GLFW_LIBRARIES}
@@ -184,6 +184,6 @@ target_link_libraries( tutorial
 # Platform-specific configurations for target
 #-------------------------------------------------------------------------------
 if(APPLE)
-  set_property( TARGET tutorial APPEND_STRING PROPERTY COMPILE_FLAGS
+  set_property( TARGET triangle_test APPEND_STRING PROPERTY COMPILE_FLAGS
                 "-Wno-deprecated-declarations -Wno-c++11-extensions")
 endif(APPLE)

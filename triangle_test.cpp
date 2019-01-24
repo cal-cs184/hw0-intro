@@ -39,7 +39,7 @@ class TriangleDrawer : public Renderer {
   
   void render() {
     glBegin(GL_TRIANGLES);
-    glColor3f( 0.1, 0.2, 0.3);
+    glColor3f( 1.0, 1.0, 0.0);
 
     Vector3D a_trans = mult(mat, a);
     Vector3D b_trans = mult(mat, b);
