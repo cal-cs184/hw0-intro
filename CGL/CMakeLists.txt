@@ -33,7 +33,7 @@ set(CGL_INCLUDE_DIRS "${CGL_SOURCE_DIR}/include")
 if(APPLE)
 
   # Clang only
-  if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "CLANG")
+  if(${CMAKE_CXX_COMPILER_ID} STREQUAL "CLANG")
 
     # OSX Framework dependencies
     if(NOT CGL_BUILD_SHARED)
@@ -44,7 +44,7 @@ if(APPLE)
     endif()
 
     # Clang configuration
-    if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "AppleClang")
+    if(${CMAKE_CXX_COMPILER_ID} STREQUAL "AppleClang")
 
       set(CLANG_CXX_FLAGS "-std=c++11 -m64")
 
@@ -62,9 +62,9 @@ if(APPLE)
     endif()
 
     # GCC configuration
-    if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+    if(${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
 
-      set(GCC_CXX_FLAGS "-std=gnu++0x -m64")
+      set(GCC_CXX_FLAGS "-std=gnu++11 -m64")
 
       if(CGL_BUILD_DEBUG)
         set(CMAKE_BUILD_TYPE Debug)
@@ -84,13 +84,14 @@ endif(APPLE)
 ##################
 # Build on Linux #
 ##################
-set(LINUX UNIX AND NOT APPLE)
-if(LINUX)
+if(UNIX AND NOT APPLE)
+
+  link_directories(/usr/lib/x86_64-linux-gnu/mesa/)
 
   # GCC only
-  if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+  if(${CMAKE_CXX_COMPILER_ID} STREQUAL "GNU")
 
-    set(GCC_CXX_FLAGS "-std=gnu++0x -m64")
+    set(GCC_CXX_FLAGS "-std=c++11 -m64")
 
     # X11 Dependencies
     if(NOT CGL_BUILD_SHARED)
@@ -120,7 +121,7 @@ if(LINUX)
 
   endif()
 
-endif(LINUX)
+endif()
 
 ####################
 # Build on Windows #
@@ -129,7 +130,7 @@ if(WIN32)
 
   if(MSVC)
 
-    set(MSVC_CXX_FLAGS "-std=gnu++0x")
+    set(MSVC_CXX_FLAGS "-std=c++11")
 
     if(CGL_BUILD_DEBUG)
         set(CMAKE_BUILD_TYPE Debug)
@@ -138,11 +139,13 @@ if(WIN32)
 
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${MSVC_CXX_FLAGS}")
 
+    add_subdirectory("${CGL_SOURCE_DIR}/deps/freetype")
+
   endif(MSVC)
 
   if(MINGW)
 
-    set(MSVC_CXX_FLAGS "-std=gnu++0x")
+    set(MSVC_CXX_FLAGS "-std=c++11")
 
     if(CGL_BUILD_DEBUG)
         set(CMAKE_BUILD_TYPE Debug)
@@ -159,43 +162,17 @@ endif(WIN32)
 # Find dependencies
 #-------------------------------------------------------------------------------
 
-link_directories(/usr/lib/x86_64-linux-gnu/mesa/)
-
 # Required packages
 find_package(OpenGL REQUIRED)
-find_package(Freetype REQUIRED)
+if(NOT WIN32)
+  find_package(Freetype REQUIRED)
+endif()
 
 include_directories( ${OPENGL_INCLUDE_DIRS})
 
-# Use pkg-config for GLEW & GLFW if available
-find_package(PkgConfig QUIET)
-
-# GLEW
-# if(PKGCONFIG_FOUND)
-#   pkg_search_module(GLEW QUIET glew)
-# else(PKGCONFIG_FOUND)
-#   find_package(GLEW QUIET)
-# endif()
-# if(NOT GLEW_FOUND)
-#   message("-- GLEW not found on system, compiling from source")
-#   add_subdirectory("${CGL_SOURCE_DIR}/deps/glew")
-#   set_property( TARGET glew APPEND_STRING PROPERTY COMPILE_FLAGS -w )
-# endif()
-
+add_definitions(-DGLEW_STATIC)
 add_subdirectory("${CGL_SOURCE_DIR}/deps/glew")
 set_property( TARGET glew APPEND_STRING PROPERTY COMPILE_FLAGS -w )
-
-# GLFW
-# if(PKGCONFIG_FOUND)
-#   pkg_search_module(GLFW QUIET glfw3)
-# else(PKGCONFIG_FOUND)
-#   find_package(GLFW QUIET)
-# endif()
-# if(NOT GLFW_FOUND)
-#   message("-- GLFW not found on system, compiling from source")
-#   add_subdirectory("${CGL_SOURCE_DIR}/deps/glfw")
-#   set_property( TARGET glfw APPEND_STRING PROPERTY COMPILE_FLAGS -w )
-# endif()
 
 add_subdirectory("${CGL_SOURCE_DIR}/deps/glfw")
 set_property( TARGET glfw APPEND_STRING PROPERTY COMPILE_FLAGS -w )

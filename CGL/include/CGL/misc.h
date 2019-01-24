@@ -4,6 +4,7 @@
 #include <cmath>
 #include <limits>
 #include <algorithm>
+#include <string>
 
 namespace CGL {
 
@@ -69,6 +70,11 @@ template<typename T>
 inline T clamp(T x, T lo, T hi) {
   return std::min(std::max(x, lo), hi);
 }
+
+/*
+  Takes a filename and resolves its absolute path
+*/
+std::string resolve_path( const char* filename );
 
 } // namespace CGL
 

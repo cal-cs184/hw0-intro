@@ -19,7 +19,6 @@ class Color {
   float r; /**< value of red chanel   */
   float g; /**< value of green chanel */
   float b; /**< value of blue chanel  */
-  float a; /**< value of alpha chanel */
 
   // constants
   static const Color White;
@@ -28,18 +27,16 @@ class Color {
   /**
    * Constructor.
    * Initialize from component values.
-   * By default, alpha is initialized to 1.
    * \param r Value of the red chanel.
    * \param g Value of the green chanel.
    * \param b Value of the blue chanel.
-   * \param a Value of the alpha chanel.
    */
-  Color( float r = 0, float g = 0, float b = 0, float a = 1.0 )
-      : r( r ), g( g ), b( b ), a( a ) { }
+  Color( float r = 0, float g = 0, float b = 0 )
+      : r( r ), g( g ), b( b ) { }
 
   /**
    * Constructor.
-   * Initialize from array of 8-bit component values (RGB only).
+   * Initialize from array of 8-bit component values (RGB).
    * \param arr Array containing component values.
    */
   Color( const unsigned char* arr );
@@ -52,39 +49,39 @@ class Color {
     return (&r)[k];
   }
 
-  // Addition. Alpha is ignored.
+  // Addition.
   inline Color operator+( const Color& rhs ) const {
-    return Color( r + rhs.r, g + rhs.g, b + rhs.b, a + rhs.a);
+    return Color( r + rhs.r, g + rhs.g, b + rhs.b);
   }
 
   inline Color& operator+=( const Color& rhs ) {
-    r += rhs.r; g += rhs.g; b += rhs.b; a += rhs.a;
+    r += rhs.r; g += rhs.g; b += rhs.b;
     return *this;
   }
 
-  // Vector multiplication. Alpha is ignored.
+  // Vector multiplication.
   inline Color operator*( const Color& rhs ) const {
-    return Color( r * rhs.r, g * rhs.g, b * rhs.b, a * rhs.a);
+    return Color( r * rhs.r, g * rhs.g, b * rhs.b);
   }
 
   inline Color& operator*=( const Color& rhs ) {
-    r *= rhs.r; g *= rhs.g; b *= rhs.b; a *= rhs.a;
+    r *= rhs.r; g *= rhs.g; b *= rhs.b;
     return *this;
   }
 
   // Scalar multiplication.
   inline Color operator*( float s ) const {
-    return Color( r * s, g * s, b * s, a * s );
+    return Color( r * s, g * s, b * s );
   }
 
   inline Color& operator*=( float s ) {
-    r *= s; g *= s; b *= s; a *= s;
+    r *= s; g *= s; b *= s;
     return *this;
   }
 
   // comparison
   inline bool operator==( const Color& rhs ) const {
-    return r == rhs.r && g == rhs.g && b == rhs.b && a == rhs.a;
+    return r == rhs.r && g == rhs.g && b == rhs.b;
   }
 
   inline bool operator!=( const Color& rhs ) const {
@@ -94,10 +91,6 @@ class Color {
   /**
    * Construct a Color object from a hexadecimal (8-bit per
    * component) ASCII string.
-   * Since hexademical strings are typically not used to encode
-   * alpha values, the alpha is set to 1 (opaque) by default.
-   * This method also accepts the string "none", in which case
-   * it returns a color value with alpha zero (transparent).
    * \return Color constructed from the input hex encoding.
    */
   static Color fromHex( const char* s );

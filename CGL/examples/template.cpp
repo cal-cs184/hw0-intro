@@ -1,11 +1,11 @@
 #include <string>
 #include <iostream>
 
-#include "CMU462/CGL.h"
-#include "CMU462/vector3D.h"
-#include "CMU462/viewer.h"
-#include "CMU462/renderer.h"
-#include "CMU462/misc.h"
+#include "CGL/CGL.h"
+#include "CGL/vector3D.h"
+#include "CGL/viewer.h"
+#include "CGL/renderer.h"
+#include "CGL/misc.h"
 
 #include "GL/glew.h"
 

@@ -14,10 +14,12 @@ typedef struct FT_LibraryRec_* FT_Library;
 struct FT_FaceRec_;
 typedef struct FT_FaceRec_*  FT_Face;
 
-namespace CGL {
-
 // base64 encoded embeded font
-extern "C" char osdfont_base64[];
+extern const std::string osdfont_base64_1, osdfont_base64_2,
+                         osdfont_base64_3, osdfont_base64_4,
+                         osdfont_base64_5, osdfont_base64_6;
+
+namespace CGL {
 
 struct OSDLine {
 

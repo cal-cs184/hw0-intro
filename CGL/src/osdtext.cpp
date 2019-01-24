@@ -51,7 +51,8 @@ int OSDText::init(bool use_hdpi) {
   }
 
   // decode font and keep in memory
-  string encoded = osdfont_base64;
+  string encoded = osdfont_base64_1 + osdfont_base64_2 + osdfont_base64_3 
+                    + osdfont_base64_4 + osdfont_base64_5 + osdfont_base64_6;
   string decoded = base64_decode(encoded);
   size_t size = decoded.size();
   font = new char[size];
@@ -189,6 +190,11 @@ void OSDText::draw_line(OSDLine line) {
   FT_Set_Pixel_Sizes(*face, 0, line.size);
 
   // set font color
+  float color_rgba[4];
+  color_rgba[0] = line.color.r;
+  color_rgba[1] = line.color.g;
+  color_rgba[2] = line.color.b;
+  color_rgba[3] = 1.0f;
   glUniform4fv(uniform_color, 1, (GLfloat*) &line.color);
 
   // get glyph

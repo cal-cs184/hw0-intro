@@ -162,10 +162,6 @@ link_directories(
   ${FREETYPE_LIBRARY_DIRS}
 )
 
-if (WIN32)
-    list(APPEND APPLICATION_SOURCE dirent/dirent.c)
-endif(WIN32)
-
 #-------------------------------------------------------------------------------
 # Add executable
 #-------------------------------------------------------------------------------

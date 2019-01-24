@@ -1,8 +1,8 @@
 #include <string>
 #include <iostream>
 
-#include "CMU462/viewer.h"
-#include "CMU462/renderer.h"
+#include "CGL/viewer.h"
+#include "CGL/renderer.h"
 
 using namespace std;
 using namespace CGL;
