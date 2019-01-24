@@ -4,7 +4,7 @@
 
 ### A. Install C++
 
-In CS 184, all of your projects will be done in C++. If you are new to the language, please read a handy [primer we wrote]() that gives a quick overview of important C++ specific concepts. 
+In CS 184, all of your projects will be done in C++. If you are new to the language, please read a handy [primer we wrote](https://docs.google.com/document/d/12aFzdekyJv5Ju6aTACT0Pk0ypByxhIKbmtLEEOn8cXM/edit) that gives a quick overview of important C++ specific concepts. 
 
 First, make sure to install the appropriate version of C++ on your machine. 
 
@@ -15,6 +15,8 @@ Aside from C++, we highly recommend that you use an real IDE, not Sublime Text o
 ### B. Install CMake
 
 We will be using [CMake](http://www.cmake.org/) to build the assignments. If you don't have CMake (version >= 2.8) on your personal computer, you can install it using apt-get on Linux or Macports/Homebrew on OS X. Alternatively, you can [download](https://cmake.org/download/) it directly from the CMake website.
+
+If you are on Windows, it might be helpful to take a look [here](https://docs.google.com/document/d/1fPwMXKZ66YZnH-z0cM7cUw7ApN6Xc0N-q9EYggrG5u4/edit).
 
 ### C. Building the Test Code
 
