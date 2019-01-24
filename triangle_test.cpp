@@ -21,7 +21,7 @@ Vector3D mult(Matrix3x3 mat, Vector3D input) {
 class TriangleDrawer : public Renderer {
  public:
 
-  TriangleDrawer() : mat(0, 1, 0, 1, 0, 0, 0, 0, 1), a(0, 0.5, 0), b(-.5, -.5, 0.0), c(0.5, -.5, 0.0) { }
+  TriangleDrawer() : mat(0, 1, 0, -1, 0, 0, 0, 0, 1), a(0, 0.5, 0), b(-.5, -.5, 0.0), c(0.5, -.5, 0.0) { }
 
   ~TriangleDrawer() { }
 
