@@ -20,7 +20,7 @@ If you are on Windows, it might be helpful to take a look [here](https://docs.go
 
 ### C. Building the Test Code
 
-To build the code, start in the folder that GitHub made or that was created when you unzipped the download. Run 
+First, clone the ```hw0``` repo from Github. Change directory into the folder, and run 
 
     mkdir build; cd build
 
