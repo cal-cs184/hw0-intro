@@ -12,29 +12,37 @@ First, make sure to install the appropriate version of C++ on your machine.
 
 On Mac, first go install XCode through the Mac App Store. Once you've done that, open up your terminal and run ```xcode-select --install```. You should now be able to run ```g++ --version``` without any errors. On Windows, install Visual Studio.
 
-Aside from C++, we highly recommend that you use an real IDE, not Sublime Text or Visual Studio Code, in order to work on your projects in this class. Many of the projects require serious debugging, made exponentially easier through the use of an IDE. We highly recommend [CLion](https://www.jetbrains.com/clion/), XCode for Mac users, or Visual Studio for Windows users.
+Aside from C++, we highly recommend that you use an real IDE, not Sublime Text or Visual Studio Code, in order to work on your projects in this class. Many of the projects require serious debugging, made exponentially easier through the use of an IDE. We highly recommend [CLion](https://www.jetbrains.com/clion/), Xcode for Mac users, or Visual Studio for Windows users.
 
 ### B. Install CMake
 
 We will be using [CMake](http://www.cmake.org/) to build the assignments. If you don't have CMake (version >= 2.8) on your personal computer, you can install it using apt-get on Linux or Macports/Homebrew on OS X. Alternatively, you can [download](https://cmake.org/download/) it directly from the CMake website.
 
-If you are on Windows, it might be helpful to take a look [here](https://cs184.eecs.berkeley.edu/sp19/article/10/cmake-gui-windows-tutorial).
+If you are using an IDE, you can use CMake to generate project files. CLion should be able to directly open CMake projects. If you are using Xcode or Visual Studio, you can use a [CMake Generator](https://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html).
 
 ### C. Building the Test Code
+
+If you are on Windows, you probably want to follow [these instructions](https://cs184.eecs.berkeley.edu/sp19/article/10/cmake-gui-windows-tutorial).
 
 First, clone the ```hw0``` repo from Github. Change directory into the folder, and run 
 
     mkdir build; cd build
 
-to create a build directory and enter it, then 
+to create a build directory and enter it. If you'd like to use an IDE, i.e. Xcode, run
+
+    cmake -G Xcode ..
+
+and CMake should generate the appropriate IDE project files. Open the new project with your chosen IDE.
+
+Instead, if you'd rather use the command line, run
 
     cmake ..
 
-to have CMake generate the appropriate Makefiles for your system, then to actually compile the code run
+to have CMake generate the appropriate Makefiles for your system, and then run
 
     make 
 
-If both of these commands ran without any errors, you should see a ```triangle_test``` executable file under the ```build``` directory. Run this file by typing
+to actually compile your files. If both of these commands ran without any errors, you should see a ```triangle_test``` executable file under the ```build``` directory. Run this file by typing
 
     ./triangle_test
 
