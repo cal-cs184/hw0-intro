@@ -2,6 +2,8 @@
 
 ## Part 1 - Setting up your machine
 
+If you face any issues with setup, please don't hesitate to talk to a TA! We will do our best to help get your machine up and running.
+
 ### A. Install C++
 
 In CS 184, all of your projects will be done in C++. If you are new to the language, please read a handy [primer we wrote](https://docs.google.com/document/d/12aFzdekyJv5Ju6aTACT0Pk0ypByxhIKbmtLEEOn8cXM/edit) that gives a quick overview of important C++ specific concepts. 
