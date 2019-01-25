@@ -6,7 +6,7 @@ If you face any issues with setup, please don't hesitate to talk to a TA! We wil
 
 ### A. Install C++
 
-In CS 184, all of your projects will be done in C++. If you are new to the language, please read a handy [primer we wrote](https://docs.google.com/document/d/12aFzdekyJv5Ju6aTACT0Pk0ypByxhIKbmtLEEOn8cXM/edit) that gives a quick overview of important C++ specific concepts. 
+In CS 184, all of your projects will be done in C++. If you are new to the language, please read a handy [primer we wrote](https://cs184.eecs.berkeley.edu/sp19/article/11/c-basics) that gives a quick overview of important C++ specific concepts. 
 
 First, make sure to install the appropriate version of C++ on your machine. 
 
@@ -18,7 +18,7 @@ Aside from C++, we highly recommend that you use an real IDE, not Sublime Text o
 
 We will be using [CMake](http://www.cmake.org/) to build the assignments. If you don't have CMake (version >= 2.8) on your personal computer, you can install it using apt-get on Linux or Macports/Homebrew on OS X. Alternatively, you can [download](https://cmake.org/download/) it directly from the CMake website.
 
-If you are on Windows, it might be helpful to take a look [here](https://docs.google.com/document/d/1fPwMXKZ66YZnH-z0cM7cUw7ApN6Xc0N-q9EYggrG5u4/edit).
+If you are on Windows, it might be helpful to take a look [here](https://cs184.eecs.berkeley.edu/sp19/article/10/cmake-gui-windows-tutorial).
 
 ### C. Building the Test Code
 
@@ -51,13 +51,15 @@ If you are feeling ambitious, try instantiating the matrix to perform a scaling 
 
 ## Part 3 - Going Above and Beyond (Optional)
 
+In computer graphics, almost everything is made out of triangles. Shapes and objects are represented as [meshes composed of hundreds or even thousands of triangles](https://en.wikipedia.org/wiki/Triangle_mesh). Let's try and do something more interesting with our triangle.
+
 Take a look at the ```render``` function in ```triangle_test.cpp```. Notice the following commands:
 
 * ```glColor3f(1.0, 1.0, 0.0)``` tells our computer to render the following shapes using the RGB value (1.0, 1.0, 0.0), or yellow.
 * ```glBegin(GL_TRIANGLES)``` tells our computer that we want to render triangles with the following vertices we will specify.
 * ```glVertex3f(x, y, z)``` tells our computer to draw a vertex at a particular location.
 
-With the above setup, if we specify six vertices, our computer will render one triangle with the first three vertices, and another triangle with the second three vertices. Try modifying the given render code to draw "something interesting". It could be a cool picture, your name, an interesting pattern... Feel free to share your creative work on Piazza!
+With the above setup, if we specify six vertices, our computer will render one triangle with the first three vertices, and another triangle with the second three vertices. Try modifying the given render code to draw "something interesting". It could be a cool picture, your name, an interesting pattern... Feel free to share your creative work on Piazza! There should be a thread where you can share your creation.
 
 ## Submission
 There is no submission for this homework. However, we highly recommend that you finish the homework, to prevent any issues when you start on the projects for this class.
