@@ -24,6 +24,8 @@ If you are using an IDE, you can use CMake to generate project files. CLion shou
 
 If you are on Windows, you probably want to follow [these instructions](https://cs184.eecs.berkeley.edu/sp19/article/10/cmake-gui-windows-tutorial).
 
+If you are using Xcode, here is a [helpful video tutorial](https://www.youtube.com/watch?v=9EADCyN_Fek) made by our very own Prof. Ren Ng last spring.
+
 First, clone the ```hw0``` repo from Github. Change directory into the folder, and run 
 
     mkdir build; cd build
