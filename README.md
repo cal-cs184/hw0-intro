@@ -32,7 +32,7 @@ to create a build directory and enter it. If you'd like to use an IDE, i.e. Xcod
 
     cmake -G Xcode ..
 
-and CMake should generate the appropriate IDE project files. Open the new project with your chosen IDE.
+and CMake should generate the appropriate IDE project files. Open the new project with your chosen IDE. Once you hit run, you should see a window pop up with a yellow triangle.
 
 Instead, if you'd rather use the command line, run
 
