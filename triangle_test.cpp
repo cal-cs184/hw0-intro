@@ -15,7 +15,10 @@ using namespace CGL;
  * Write your own matrix vector multiplication function. Do not use the built-in CGL function!
  */
 Vector3D mult(Matrix3x3 mat, Vector3D input) {
-  return input; // FIXME
+  float x = mat(0, 0) * input[0] + mat(0, 1) * input[1] + mat(0, 2) * input[2];
+  float y = mat(1, 0) * input[0] + mat(1, 1) * input[1] + mat(1, 2) * input[2];
+  float z = mat(2, 0) * input[0] + mat(2, 1) * input[1] + mat(2, 2) * input[2];
+  return Vector3D(x, y, z);
 }
 
 class TriangleDrawer : public Renderer {
