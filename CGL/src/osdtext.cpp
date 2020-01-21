@@ -195,7 +195,7 @@ void OSDText::draw_line(OSDLine line) {
   color_rgba[1] = line.color.g;
   color_rgba[2] = line.color.b;
   color_rgba[3] = 1.0f;
-  glUniform4fv(uniform_color, 1, (GLfloat*) &line.color);
+  glUniform4fv(uniform_color, 1, (GLfloat*) color_rgba);
 
   // get glyph
   const char *p;

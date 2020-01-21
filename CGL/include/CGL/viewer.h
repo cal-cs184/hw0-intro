@@ -22,7 +22,7 @@ class Viewer {
 
   /**
    * Constructor.
-   * Creates a new viewer with the default title (CMU462).
+   * Creates a new viewer with the default title (CGL).
    */
   Viewer( void );
 
@@ -58,6 +58,11 @@ class Viewer {
    * \param renderer The user space renderer to use in the viewer.
    */
   void set_renderer( Renderer *renderer );
+
+  void resize(int w, int h) {
+    glfwSetWindowSize(window, w, h);
+    resize_callback(window, w, h);
+  }
 
  private:
 
