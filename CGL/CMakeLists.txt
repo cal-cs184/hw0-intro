@@ -2,6 +2,11 @@
 # Kayvon Fatahalian, Keenan Crane,
 # Sky Gao, Bryce Summers, Michael Choquette.
 cmake_minimum_required(VERSION 2.8)
+
+if (POLICY CMP0048)
+  cmake_policy(SET CMP0048 OLD)
+endif (POLICY CMP0048)
+
 project(CGL)
 
 #-------------------------------------------------------------------------------
@@ -130,7 +135,7 @@ if(WIN32)
 
   if(MSVC)
 
-    set(MSVC_CXX_FLAGS "-std=c++11")
+    set(MSVC_CXX_FLAGS "/std:latest")
 
     if(CGL_BUILD_DEBUG)
         set(CMAKE_BUILD_TYPE Debug)
@@ -163,10 +168,9 @@ endif(WIN32)
 #-------------------------------------------------------------------------------
 
 # Required packages
+set(OpenGL_GL_PREFERENCE LEGACY)
 find_package(OpenGL REQUIRED)
-if(NOT WIN32)
-  find_package(Freetype REQUIRED)
-endif()
+find_package(Freetype REQUIRED)
 
 include_directories( ${OPENGL_INCLUDE_DIRS})
 

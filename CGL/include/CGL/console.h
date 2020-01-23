@@ -11,8 +11,8 @@
 #define ANSI_M "\x1b[35m"
 #define ANSI_Y "\x1b[33m"
 
-#define out_msg(s) std::cout << ANSI_B << "[CMU462] " << ANSI_RESET << s << std::endl << std::flush
-#define out_wrn(s) std::cout << ANSI_Y << "[CMU462] " << ANSI_RESET << s << std::endl << std::flush
-#define out_err(s) std::cout << ANSI_R << "[CMU462] " << ANSI_RESET << s << std::endl << std::flush
+#define out_msg(s) std::cout << ANSI_B << "[CGL] " << ANSI_RESET << s << std::endl << std::flush
+#define out_wrn(s) std::cout << ANSI_Y << "[CGL] " << ANSI_RESET << s << std::endl << std::flush
+#define out_err(s) std::cout << ANSI_R << "[CGL] " << ANSI_RESET << s << std::endl << std::flush
 
 #endif // CGL_CONSOLE_H
