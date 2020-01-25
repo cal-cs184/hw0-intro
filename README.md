@@ -44,32 +44,42 @@ to have CMake generate the appropriate Makefiles for your system, and then run
 
     make 
 
-to actually compile your files. If both of these commands ran without any errors, you should see a ```triangle_test``` executable file under the ```build``` directory. Run this file by typing
+to actually compile your files. If both of these commands ran without any errors, you should see a ```quad_test``` executable file under the ```build``` directory. Run this file by typing
 
-    ./triangle_test
+    ./quad_test
 
-If all goes well, you should see a window pop up with a yellow triangle.
+If all goes well, you should see a window pop up with a rectangle with a brick texture.
 
 
 ## Part 2 - Basic C++/Linear Algebra Practice
 
-Fill in the ```mult``` function at the top of ```triangle_test.cpp``` by implementing a 3 dimensional matrix-vector multiplication. Do not use the built-in CGL multiplication function! Read the CGL source files for ```matrix3x3.cpp``` and ```vector3D.cpp``` in order to get a better idea for how to use the two parameters. Once the function is properly implemented, you should see the yellow triangle rotated 90 degrees.
+Fill in the ```mult``` function at the top of ```quad_test.cpp``` by implementing a 3 dimensional matrix-vector multiplication. Do not use the built-in CGL multiplication function! Read the CGL source files for ```matrix3x3.cpp``` and ```vector3D.cpp``` in order to get a better idea for how to use the two parameters. Once the function is properly implemented, you should see the yellow triangle rotated 90 degrees.
 
 Remember to run ```make``` to compile your edits.
 
 If you are feeling ambitious, try instantiating the matrix to perform a scaling operation (possible) or shifting operation (not possible, why is that?). We'll learn more formally about these later on in the course.
 
-## Part 3 - Going Above and Beyond (Optional)
+## Part 3 - Types of Filters
 
-In computer graphics, almost everything is made out of triangles. Shapes and objects are represented as [meshes composed of hundreds or even thousands of triangles](https://en.wikipedia.org/wiki/Triangle_mesh). Let's try and do something more interesting with our triangle.
+There should be two sets of TODO comments in the code - one near a ```glTexParameteri``` function, and another near ```glTexCoord2f``` functions. These two are API calls to the ```OpenGL``` library, the first one setting extra options on texture processing, and another on texture coordinate binding. 
 
-Take a look at the ```render``` function in ```triangle_test.cpp```. Notice the following commands:
+```OpenGL``` is totally optional now, and we don't need to go into the details (though it may be helpful knowledge, especially for the final project!) For now, simply use the two functions to explore the different filtering functions available in many standard libraries, and compare and contrast their effects. If it's hard to see, we can somewhat 'zoom in' by setting smaller values for the ```glTexCoord2f``` coordinates, essentially binding a smaller region of the texture to the entire rectangle.
+
+How does `Linear` filtering compare to `Nearest`? How does adding `MipMap` options affect the outcome? How are they each implemented? (You will do this for the first assignment)
+
+Optional: For further reading on filtering, specifically in `OpenGL`, as well as a great `OpenGL` beginner resource, [click here](https://learnopengl.com/Getting-started/Textures).
+
+## Part 4 - Going Above and Beyond (Optional)
+
+In computer graphics, almost everything is made out of triangles or quads. Shapes and objects are represented as [meshes composed of hundreds or even thousands of triangles](https://en.wikipedia.org/wiki/Triangle_mesh). Let's try and do something more interesting with our triangle.
+
+Take a look at the ```render``` function in ```quad_test.cpp```. Notice the following commands:
 
 * ```glColor3f(1.0, 1.0, 0.0)``` tells our computer to render the following shapes using the RGB value (1.0, 1.0, 0.0), or yellow.
-* ```glBegin(GL_TRIANGLES)``` tells our computer that we want to render triangles with the following vertices we will specify.
+* ```glBegin(GL_QUADS)``` tells our computer that we want to render triangles with the following vertices we will specify.
 * ```glVertex3f(x, y, z)``` tells our computer to draw a vertex at a particular location.
 
-With the above setup, if we specify six vertices, our computer will render one triangle with the first three vertices, and another triangle with the second three vertices. Try modifying the given render code to draw "something interesting". It could be a cool picture, your name, an interesting pattern... Feel free to share your creative work on Piazza! There should be a thread where you can share your creation.
+With the above setup, if we specify eight vertices, our computer will render one quad with the first four vertices, and another quad with the second four vertices (One can do the same for triangles with ```glBegin(GL_TRIANGLES)```. Try modifying the given render code to draw "something interesting". (Note: If you want to disable the textures, you'll need to comment out the line ```glBindTexture(GL_TEXTURE_2D, texture)``` in the beginning of the ```render``` function) It could be a cool picture, your name, an interesting pattern... Feel free to share your creative work on Piazza! There should be a thread where you can share your creation.
 
 ## Submission
 There is no submission for this homework. However, we highly recommend that you finish the homework, to prevent any issues when you start on the projects for this class.

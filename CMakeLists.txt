@@ -135,7 +135,7 @@ cmake_minimum_required(VERSION 2.8)
 
 # Application source
 set(APPLICATION_SOURCE
-    triangle_test.cpp
+    quad_test.cpp
 )
 
 #-------------------------------------------------------------------------------
@@ -165,9 +165,9 @@ link_directories(
 #-------------------------------------------------------------------------------
 # Add executable
 #-------------------------------------------------------------------------------
-add_executable(triangle_test ${APPLICATION_SOURCE})
+add_executable(quad_test ${APPLICATION_SOURCE})
 
-target_link_libraries( triangle_test
+target_link_libraries( quad_test
     CGL ${CGL_LIBRARIES}
     glew ${GLEW_LIBRARIES}
     glfw ${GLFW_LIBRARIES}
@@ -180,6 +180,6 @@ target_link_libraries( triangle_test
 # Platform-specific configurations for target
 #-------------------------------------------------------------------------------
 if(APPLE)
-  set_property( TARGET triangle_test APPEND_STRING PROPERTY COMPILE_FLAGS
+  set_property( TARGET quad_test APPEND_STRING PROPERTY COMPILE_FLAGS
                 "-Wno-deprecated-declarations -Wno-c++11-extensions")
 endif(APPLE)
