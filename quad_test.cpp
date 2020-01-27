@@ -18,13 +18,13 @@ unsigned int texture;
  * Write your own matrix vector multiplication function. Do not use the built-in CGL function!
  */
 Vector3D mult(Matrix3x3 mat, Vector3D input) {
-  return input; // FIXME
+  return input; /* TODO */
 }
 
 class QuadDrawer : public Renderer {
  public:
 
-  QuadDrawer() : mat(0, 1, 0, -1, 0, 0, 0, 0, 1), a(-1, .5, 0), b(-1, -.5, 0.0), c(1, -.5, 0.0), d(1,0.5,0.0) { }
+  QuadDrawer() : mat(0, 1, 0, -1, 0, 0, 0, 0, 1), a(-.75, .5, 0), b(-.75, -.5, 0.0), c(.75, -.5, 0.0), d(.75,0.5,0.0) { }
 
   ~QuadDrawer() { }
 
@@ -57,7 +57,7 @@ class QuadDrawer : public Renderer {
     // load and generate the texture
     int width, height, nrChannels;
     //TODO: (optional) Change the picture here!
-    unsigned char *data = stbi_load("../../wall.jpg", &width, &height, &nrChannels, 0);
+    unsigned char *data = stbi_load("../wall.jpg", &width, &height, &nrChannels, 0);
     if (data)
     {
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -72,8 +72,9 @@ class QuadDrawer : public Renderer {
   }
   
   void render() {
-    //glBindTexture(GL_TEXTURE_2D, texture);
+    glBindTexture(GL_TEXTURE_2D, texture); // Comment this out to disable textures
     glBegin(GL_QUADS);
+
     glColor3f( 1.0, 1.0, 0.0); // Can play with RGB values here :)
 
     Vector3D a_trans = mult(mat, a);
@@ -128,7 +129,7 @@ int main( int argc, char** argv ) {
   viewer.set_renderer(renderer);
 
   // start the viewer
-  viewer.init();
+  viewer.init(600, 600);
   viewer.start();
 
   return 0;
