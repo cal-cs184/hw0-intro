@@ -55,8 +55,11 @@ Viewer::~Viewer() {
   delete osd_text;
 }
 
-
 void Viewer::init() {
+  Viewer::init(DEFAULT_W, DEFAULT_H);
+}
+
+void Viewer::init(int width, int height) {
 
   // initialize glfw
   glfwSetErrorCallback( err_callback );
@@ -67,7 +70,7 @@ void Viewer::init() {
 
   // create window
   string title = renderer ? "CS184: " + renderer->name() : "CS184";
-  window = glfwCreateWindow( DEFAULT_W, DEFAULT_H, title.c_str(), NULL, NULL );
+  window = glfwCreateWindow( width, height, title.c_str(), NULL, NULL );
   if (!window) {
     out_err("Error: could not create window!");
     glfwTerminate();

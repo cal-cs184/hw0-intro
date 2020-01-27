@@ -46,6 +46,8 @@ class Viewer {
    */
   void init( void );
 
+  void init( int width, int height );
+
   /**
    * Start the drawing loop of the viewer.
    * Once called this will block until the viewer is close.
