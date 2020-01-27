@@ -3,7 +3,7 @@
 
 #include "misc.h"
 
-// CMU462 Forward Declarations //
+// CGL Forward Declarations //
 
 namespace CGL {
 

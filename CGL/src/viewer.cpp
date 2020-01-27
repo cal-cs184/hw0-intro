@@ -5,7 +5,6 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
-#include <sstream>
 
 #include "GL/glew.h"
 
@@ -14,8 +13,8 @@
 using namespace std;
 using namespace chrono;
 
-#define DEFAULT_W 640
-#define DEFAULT_H 640
+#define DEFAULT_W 800
+#define DEFAULT_H 600
 
 namespace CGL {
 
@@ -51,14 +50,16 @@ Viewer::~Viewer() {
 
   glfwDestroyWindow(window);
   glfwTerminate();
-  
   // free resources
   delete renderer;
   delete osd_text;
 }
 
-
 void Viewer::init() {
+  Viewer::init(DEFAULT_W, DEFAULT_H);
+}
+
+void Viewer::init(int width, int height) {
 
   // initialize glfw
   glfwSetErrorCallback( err_callback );
@@ -69,7 +70,7 @@ void Viewer::init() {
 
   // create window
   string title = renderer ? "CS184: " + renderer->name() : "CS184";
-  window = glfwCreateWindow( DEFAULT_W, DEFAULT_H, title.c_str(), NULL, NULL );
+  window = glfwCreateWindow( width, height, title.c_str(), NULL, NULL );
   if (!window) {
     out_err("Error: could not create window!");
     glfwTerminate();
@@ -125,10 +126,10 @@ void Viewer::init() {
   }
   
   // add lines for renderer and fps
-  line_id_renderer  = osd_text->add_line(-0.98,  0.90, "Renderer", 
-                                          12, Color(0.15, 0.5, 0.15));
+  line_id_renderer  = osd_text->add_line(-0.95,  0.90, "Renderer", 
+                                          18, Color(0.15, 0.5, 0.15));
   line_id_framerate = osd_text->add_line(-0.98, -0.96, "Framerate", 
-                                          12, Color(0.15, 0.5, 0.15));
+                                          14, Color(0.15, 0.5, 0.15));
 
   // resize elements to current size
   resize_callback(window, buffer_w, buffer_h);
@@ -183,9 +184,7 @@ void Viewer::drawInfo() {
     // update framecount OSD
     Color c = framecount < 20 ? Color(1.0, 0.35, 0.35) : Color(0.15, 0.5, 0.15);
     osd_text->set_color(line_id_framerate, c);
-    stringstream ss;
-    ss << "Framerate: " << framecount << " fps";
-    string framerate_info = ss.str();
+    string framerate_info = "Framerate: " + to_string(framecount) + " fps";
     osd_text->set_text(line_id_framerate, framerate_info);
 
     // reset timer and counter
@@ -270,7 +269,8 @@ void Viewer::key_callback( GLFWwindow* window,
 
   if (action == GLFW_PRESS) {
     if( key == GLFW_KEY_ESCAPE ) { 
-      glfwSetWindowShouldClose( window, true ); 
+      exit(0);
+      // glfwSetWindowShouldClose( window, true ); 
     } else if( key == GLFW_KEY_GRAVE_ACCENT ){
       showInfo = !showInfo;
     } 
