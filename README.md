@@ -95,10 +95,10 @@ In computer graphics, almost everything is made out of triangles or quads. Shape
 Take a look at the ```render``` function in ```quad_test.cpp```. Notice the following commands:
 
 * ```glColor3f(1.0, 1.0, 0.0)``` tells our computer to render the following shapes using the RGB value (1.0, 1.0, 0.0), or yellow.
-* ```glBegin(GL_QUADS)``` tells our computer that we want to render triangles with the following vertices we will specify.
+* ```glBegin(GL_QUADS)``` tells our computer that we want to render quads with the following vertices we will specify.
 * ```glVertex3f(x, y, z)``` tells our computer to draw a vertex at a particular location.
 
-With the above setup, if we specify eight vertices, our computer will render one quad with the first four vertices, and another quad with the second four vertices (One can do the same for triangles with ```glBegin(GL_TRIANGLES)```. Try modifying the given render code to draw "something interesting". (Note: If you want to disable the textures, you'll need to comment out the line ```glBindTexture(GL_TEXTURE_2D, texture)``` in the beginning of the ```render``` function) It could be a cool picture, your name, an interesting pattern... Feel free to share your creative work on Piazza! There should be a thread where you can share your creation.
+With the above setup, if we specify eight vertices, our computer will render one quad with the first four vertices, and another quad with the second four vertices (One can do the same for triangles with ```glBegin(GL_TRIANGLES)```, which uses three vertices per triangle). Try modifying the given render code to draw "something interesting". (Note: If you want to disable the textures, you'll need to comment out the line ```glBindTexture(GL_TEXTURE_2D, texture)``` in the beginning of the ```render``` function) It could be a cool picture, your name, an interesting pattern... Feel free to share your creative work on Piazza! There should be a thread where you can share your creation.
 
 ## Submission
 There is no submission for this homework. However, we highly recommend that you finish the homework, to prevent any issues when you start on the projects for this class.
