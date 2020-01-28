@@ -18,7 +18,7 @@ unsigned int texture;
  * Write your own matrix vector multiplication function. Do not use the built-in CGL function!
  */
 Vector3D mult(Matrix3x3 mat, Vector3D input) {
-  return input; /* TODO */
+    return input; /* TODO */
 }
 
 class QuadDrawer : public Renderer {
@@ -57,7 +57,11 @@ class QuadDrawer : public Renderer {
     // load and generate the texture
     int width, height, nrChannels;
     //TODO: (optional) Change the picture here!
-    unsigned char *data = stbi_load("../wall.jpg", &width, &height, &nrChannels, 0);
+#ifdef _MSC_VER
+    unsigned char* data = stbi_load("../../../wall.jpg", &width, &height, &nrChannels, 0);
+#else
+    unsigned char* data = stbi_load("../wall.jpg", &width, &height, &nrChannels, 0);
+#endif
     if (data)
     {
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
