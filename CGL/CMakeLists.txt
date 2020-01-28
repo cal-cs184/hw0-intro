@@ -178,6 +178,9 @@ add_definitions(-DGLEW_STATIC)
 add_subdirectory("${CGL_SOURCE_DIR}/deps/glew")
 set_property( TARGET glew APPEND_STRING PROPERTY COMPILE_FLAGS -w )
 
+if (MSVC)
+  set(GLFW_INSTALL OFF)
+endif(MSVC)
 add_subdirectory("${CGL_SOURCE_DIR}/deps/glfw")
 set_property( TARGET glfw APPEND_STRING PROPERTY COMPILE_FLAGS -w )
 
