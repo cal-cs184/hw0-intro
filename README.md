@@ -1,76 +1,13 @@
 # HW0 - Getting Started
 
-## Part 1 - Setting up your machine (Mac / Linux / *nix)
+## Part 1 - Setting up your machine and running the project
 
-If you face any issues with setup, please don't hesitate to talk to a TA! We will do our best to help get your machine up and running.
-
-### A. Install C++
-
-In CS 184, all of your projects will be done in C++. If you are new to the language, please read a handy [primer we wrote](https://cs184.eecs.berkeley.edu/sp19/article/11/c-basics) that gives a quick overview of important C++ specific concepts. 
-
-First, make sure to install the appropriate version of C++ on your machine. 
-
-On Mac, first go install XCode through the Mac App Store. Once you've done that, open up your terminal and run ```xcode-select --install```. You should now be able to run ```g++ --version``` without any errors.
-
-Aside from C++, we highly recommend that you use an real IDE, not Sublime Text or Visual Studio Code, in order to work on your projects in this class. Many of the projects require serious debugging, made exponentially easier through the use of an IDE. We highly recommend [CLion](https://www.jetbrains.com/clion/), Xcode for Mac users, or Visual Studio for Windows users.
-
-### B. Install CMake
-
-We will be using [CMake](http://www.cmake.org/) to build the assignments. If you don't have CMake (version >= 2.8) on your personal computer, you can install it using apt-get on Linux or Macports/Homebrew on OS X. Alternatively, you can [download](https://cmake.org/download/) it directly from the CMake website.
-
-If you are using an IDE, you can use CMake to generate project files. CLion should be able to directly open CMake projects. If you are using Xcode or Visual Studio, you can use a [CMake Generator](https://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html).
-
-### C. Building the Test Code
-
-If you are on Windows, goto the next part of this document.
-
-If you are using Xcode, here is a [helpful video tutorial](https://www.youtube.com/watch?v=9EADCyN_Fek) made by our very own Prof. Ren Ng last spring.
-
-First, clone the ```hw0``` repo from Github. Change directory into the folder, and run 
-
-    mkdir build; cd build
-
-to create a build directory and enter it. If you'd like to use an IDE, i.e. Xcode, run
-
-    cmake -G Xcode ..
-
-and CMake should generate the appropriate IDE project files. Open the new project with your chosen IDE. Once you hit run, you should see a window pop up with a yellow triangle.
-
-Instead, if you'd rather use the command line, run
-
-    cmake ..
-
-to have CMake generate the appropriate Makefiles for your system, and then run
-
-    make 
-
-to actually compile your files. If both of these commands ran without any errors, you should see a ```quad_test``` executable file under the ```build``` directory. Run this file by typing
-
-    ./quad_test
+For instructions on how to setup your comupter and build CS184 projects, go to [the CS184 website > Resources > Setup, Building, and Submitting CS184 Assignments](https://cs184.eecs.berkeley.edu/sp20/article/11/building-and-submitting-cs184-as) for a detailed guide.
 
 If all goes well, you should see a window pop up with a rectangle with a brick texture.
 
-## Part 1 - Setting up your machine (Windows)
-
-1. Install Visual Studio 2019 or newer.
-	-	Select "Desktop Development with C++" when installing Visual Studio
-2. Install Git for Windows
-3. Install Vcpkg
-	-	Open a PowerShell / CMD / Git Bash in the folder where you wish to install vcpkg, (e.g. `C:/`)
-	-	Vcpkg is a package management software that download and build the required software dependencies.
-	-	`git clone https://github.com/microsoft/vcpkg`
-	-	Go into the `vcpkg` folder
-	-	`.\bootstrap-vcpkg.bat`
-	-	After vcpkg is installed, install the dependency of this project
-		-	On 64-bit system (most system today) `.\vcpkg.exe install freetype:x64-windows`
-		-	On 32-bit system (may not work well) `.\vcpkg.exe install freetype`
-4. Open Visual Studio, use "Clone or Check out Code"
-	-	Use the GitHub repository link
-5. After the project is opened and the files are listed, right click on `CMakeLists.txt`, and then click "CMake Settings for Assignment1"
-	-	On the left, press the add button and add a configuration with "x64-Release" (or "x86-Release" on a 32-bit machine). You will still be able to debug the project, but the optimizations of release code will be applied.
-	-	Then, find field "CMake toolchain file", enter `[location of vcpkg]/scripts/buildsystems/vcpkg.cmake`. (e.g. `C:/vcpkg/scripts/buildsystems/vcpkg.cmake`)
-6. "Build" -> "Build All"
-7. Then you can run your project
+### Common issue: I only see a yellow rectangle
+If you only see a yellow rectangle, it means that the HW0 ran properly, but it couldn't find the `wall.jpg` texture. If you look inside the source code, you will find a line that says `stbi_load("../wall.jpg"`. This means that the binary is trying to look for the texture file in a parent directory. To solve this issue, run the executable with the working directory inside the build folder. Refer to the specific build section for instructions on how to use this.
 
 ## Part 2 - Basic C++/Linear Algebra Practice
 
