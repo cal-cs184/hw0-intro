@@ -53,11 +53,13 @@ If all goes well, you should see a window pop up with a rectangle with a brick t
 ## Part 1 - Setting up your machine (Windows)
 
 1. Install Visual Studio 2019 or newer.
+	-	Select "Desktop Development with C++" when installing Visual Studio
 2. Install Git for Windows
 3. Install Vcpkg
 	-	Open a PowerShell / CMD / Git Bash in the folder where you wish to install vcpkg, (e.g. `C:/`)
 	-	Vcpkg is a package management software that download and build the required software dependencies.
 	-	`git clone https://github.com/microsoft/vcpkg`
+	-	Go into the `vcpkg` folder
 	-	`.\bootstrap-vcpkg.bat`
 	-	After vcpkg is installed, install the dependency of this project
 		-	On 64-bit system (most system today) `.\vcpkg.exe install freetype:x64-windows`
