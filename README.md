@@ -10,7 +10,7 @@ In CS 184, all of your projects will be done in C++. If you are new to the langu
 
 First, make sure to install the appropriate version of C++ on your machine. 
 
-On Mac, first go install XCode through the Mac App Store. Once you've done that, open up your terminal and run ```xcode-select --install```. You should now be able to run ```g++ --version``` without any errors. On Windows, install Visual Studio.
+On Mac, first go install XCode through the Mac App Store. Once you've done that, open up your terminal and run ```xcode-select --install```. You should now be able to run ```g++ --version``` without any errors.
 
 Aside from C++, we highly recommend that you use an real IDE, not Sublime Text or Visual Studio Code, in order to work on your projects in this class. Many of the projects require serious debugging, made exponentially easier through the use of an IDE. We highly recommend [CLion](https://www.jetbrains.com/clion/), Xcode for Mac users, or Visual Studio for Windows users.
 
@@ -22,7 +22,7 @@ If you are using an IDE, you can use CMake to generate project files. CLion shou
 
 ### C. Building the Test Code
 
-If you are on Windows, you probably want to follow [these instructions](https://cs184.eecs.berkeley.edu/sp19/article/10/cmake-gui-windows-tutorial).
+If you are on Windows, goto the next part of this document.
 
 If you are using Xcode, here is a [helpful video tutorial](https://www.youtube.com/watch?v=9EADCyN_Fek) made by our very own Prof. Ren Ng last spring.
 
