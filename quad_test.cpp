@@ -18,13 +18,14 @@ unsigned int texture;
  * Write your own matrix vector multiplication function. Do not use the built-in CGL function!
  */
 Vector3D mult(Matrix3x3 mat, Vector3D input) {
-    return input; /* TODO */
+    /* TODO */
+    return input;
 }
 
 class QuadDrawer : public Renderer {
  public:
 
-  QuadDrawer() : mat(0, 1, 0, -1, 0, 0, 0, 0, 1), a(-.75, .5, 0), b(-.75, -.5, 0.0), c(.75, -.5, 0.0), d(.75,0.5,0.0) { }
+  QuadDrawer() : mat(1. / sqrt(2), 1. / sqrt(2), 0, -1. / sqrt(2), 1. / sqrt(2), 0, 0, 0, 1), a(-.75, .5, 0), b(-.75, -.5, 0.0), c(.75, -.5, 0.0), d(.75,0.5,0.0) { }
 
   ~QuadDrawer() { }
 

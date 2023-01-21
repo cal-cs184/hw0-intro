@@ -11,9 +11,12 @@ If you only see a yellow rectangle, it means that the HW0 ran properly, but it c
 
 ## Part 2 - Basic C++/Linear Algebra Practice
 
-Fill in the ```mult``` function at the top of ```quad_test.cpp``` by implementing a 3 dimensional matrix-vector multiplication. Do not use the built-in CGL multiplication function! Read the [CGL vectors documentations](https://cs184.eecs.berkeley.edu/sp22/docs/cgl-vector-docs) in order to get a better idea for how to use the two parameters. Once the function is properly implemented, you should see the brick rotated 90 degrees.
+Fill in the ```mult``` function at the top of ```quad_test.cpp``` by implementing a 3 dimensional matrix-vector multiplication. Do not use the built-in CGL multiplication function! Read the [CGL vectors documentations](https://cs184.eecs.berkeley.edu/sp22/docs/cgl-vector-docs) in order to get a better idea for how to use the two parameters. Once the function is properly implemented, you should see the brick rotated 45 degrees clockwise, shown below:
+
 
 Try to achieve this __without__ manually writing out the equation for each __component__ of the vector. (Hint: a 3d matrix-vector multiplication is the sum of three scalar-vector multiplication, and you can access use columns of matrix as vectors)
+
+![alt text](part2_result.jpg)
 
 Remember to run ```make``` to compile your edits.
 
