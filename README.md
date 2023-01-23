@@ -16,7 +16,7 @@ Fill in the ```mult``` function at the top of ```quad_test.cpp``` by implementin
 
 Try to achieve this __without__ manually writing out the equation for each __component__ of the vector. (Hint: a 3d matrix-vector multiplication is the sum of three scalar-vector multiplication, and you can access use columns of matrix as vectors)
 
-![alt text](part2_result.jpg)
+![alt text](part2_result.png)
 
 Remember to run ```make``` to compile your edits.
 
