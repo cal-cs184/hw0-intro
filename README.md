@@ -2,7 +2,7 @@
 
 ## Part 1 - Setting up your machine and running the project
 
-For instructions on how to setup your comupter and build CS184 projects, go to [the CS184 website > Resources > Building CS184 Assignments](https://cs184.eecs.berkeley.edu/sp23/docs/building-assignments) for a detailed guide.
+For instructions on how to setup your computer and build CS184 projects, go to [the CS184 website > Resources > Building CS184 Assignments](https://cs184.eecs.berkeley.edu/sp23/docs/building-assignments) for a detailed guide.
 
 If all goes well, you should see a window pop up with a rectangle with a brick texture.
 
