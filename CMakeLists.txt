@@ -1,6 +1,7 @@
 # Original file Copyright CMU462 Fall 2015: 
 # Kayvon Fatahalian, Keenan Crane,
 # Sky Gao, Bryce Summers, Michael Choquette.
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 cmake_minimum_required(VERSION 2.8)
 project(HW0)
 
