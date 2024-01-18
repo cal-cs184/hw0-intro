@@ -2,7 +2,7 @@
 
 ## Part 1 - Setting up your machine and running the project
 
-For instructions on how to setup your computer and build CS184 projects, go to [the CS184 website > Resources > Building CS184 Assignments](https://cs184.eecs.berkeley.edu/sp23/docs/building-assignments) for a detailed guide.
+For instructions on how to setup your computer and build CS184 projects, go to [the CS184 website > Resources > Building CS184 Assignments](https://cs184.eecs.berkeley.edu/sp24/docs/building-assignments) for a detailed guide.
 
 If all goes well, you should see a window pop up with a rectangle with a brick texture.
 
@@ -11,7 +11,7 @@ If you only see a yellow rectangle, it means that the HW0 ran properly, but it c
 
 ## Part 2 - Basic C++/Linear Algebra Practice
 
-Fill in the ```mult``` function at the top of ```quad_test.cpp``` by implementing a 3 dimensional matrix-vector multiplication. Do not use the built-in CGL multiplication function! Read the [CGL vectors documentations](https://cs184.eecs.berkeley.edu/sp23/docs/cgl-vector-docs) in order to get a better idea for how to use the two parameters. Once the function is properly implemented, you should see the brick rotated 45 degrees clockwise, shown below:
+Fill in the ```mult``` function at the top of ```quad_test.cpp``` by implementing a 3 dimensional matrix-vector multiplication. Do not use the built-in CGL multiplication function! Read the [CGL vectors documentations](https://cs184.eecs.berkeley.edu/sp24/docs/cgl-vector-docs) in order to get a better idea for how to use the two parameters. Once the function is properly implemented, you should see the brick rotated 45 degrees clockwise, shown below:
 
 
 Try to achieve this __without__ manually writing out the equation for each __component__ of the vector. (Hint: a 3d matrix-vector multiplication is the sum of three scalar-vector multiplication, and you can access use columns of matrix as vectors)
@@ -45,4 +45,4 @@ Take a look at the ```render``` function in ```quad_test.cpp```. Notice the foll
 With the above setup, if we specify eight vertices, our computer will render one quad with the first four vertices, and another quad with the second four vertices (One can do the same for triangles with ```glBegin(GL_TRIANGLES)```, which uses three vertices per triangle). Try modifying the given render code to draw "something interesting". (Note: If you want to disable the textures, you'll need to comment out the line ```glBindTexture(GL_TEXTURE_2D, texture)``` in the beginning of the ```render``` function) It could be a cool picture, your name, an interesting pattern... Feel free to share your creative work on Piazza! There should be a thread where you can share your creation.
 
 ## Submission
-There is no graded submission for this homework. However, to familiarize yourself with the process, you should try committing and tagging your code as specified in [part 1](https://cs184.eecs.berkeley.edu/sp23/docs/submitting-assignments). We highly recommend that you finish the homework, to prevent any issues when you start on the projects for this class.
+There is no graded submission for HW 0. However, we highly recommend that you finish HW 0, to prevent any issues when you start on future homework assignments for this class.
