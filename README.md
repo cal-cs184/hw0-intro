@@ -2,7 +2,7 @@
 
 ## Part 1 - Setting up your machine and running the project
 
-For instructions on how to setup your computer and build CS184 projects, go to [the CS184 website > Resources > Building CS184 Assignments](https://cs184.eecs.berkeley.edu/sp24/docs/building-assignments) for a detailed guide.
+For instructions on how to setup your computer and build CS184 projects, go to [the CS184 website > Resources > Building CS184 Assignments](https://cs184.eecs.berkeley.edu/sp25/resources/building-assignments/) for a detailed guide.
 
 If all goes well, you should see a window pop up with a rectangle with a brick texture.
 
@@ -11,7 +11,7 @@ If you only see a yellow rectangle, it means that the HW0 ran properly, but it c
 
 ## Part 2 - Basic C++/Linear Algebra Practice
 
-Fill in the ```mult``` function at the top of ```quad_test.cpp``` by implementing a 3 dimensional matrix-vector multiplication. Do not use the built-in CGL multiplication function! Read the [CGL vectors documentations](https://cs184.eecs.berkeley.edu/sp24/docs/cgl-vector-docs) in order to get a better idea for how to use the two parameters. Once the function is properly implemented, you should see the brick rotated 45 degrees clockwise, shown below:
+Fill in the ```mult``` function at the top of ```quad_test.cpp``` by implementing a 3 dimensional matrix-vector multiplication. Do not use the built-in CGL multiplication function! Read the [CGL vectors documentations](https://cs184.eecs.berkeley.edu/sp25/resources/cgl-vector-docs/) in order to get a better idea for how to use the two parameters. Once the function is properly implemented, you should see the brick rotated 45 degrees clockwise, shown below:
 
 
 Try to achieve this __without__ manually writing out the equation for each __component__ of the vector. (Hint: a 3d matrix-vector multiplication is the sum of three scalar-vector multiplication, and you can access use columns of matrix as vectors)
