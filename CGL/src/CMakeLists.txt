@@ -1,7 +1,7 @@
 # Original file Copyright CMU462 Fall 2015: 
 # Kayvon Fatahalian, Keenan Crane,
 # Sky Gao, Bryce Summers, Michael Choquette.
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.10)
 
 include_directories(${PROJECT_SOURCE_DIR}/include/CGL)
 
